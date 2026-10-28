@@ -1,2 +1,45 @@
+# Secrets — NEVER commit
+.env
+.env.local
+*.token
+secrets/
+
+# Internal project dirs (not part of deliverable)
 skills/
-node_modules/
+upload/
+db/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Build / artifacts
+build/
+dist/
+*.tar.gz
+*.whl
+
+# Data / model artifacts (never commit)
+*.safetensors
+*.pt
+*.ckpt
+*.bin
+*.h5
+checkpoints/
+output/
+tokenizer_cache/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
