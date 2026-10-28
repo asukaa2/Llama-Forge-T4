@@ -1,4 +1,6 @@
-# llama-0.5b-from-scratch-t4
+# 🔥 Llama-Forge-T4
+
+> Forge a ~0.5B-parameter Llama from scratch on a single free-tier Colab T4 GPU.
 
 Train a **~0.5B-parameter Llama-style decoder-only language model FROM SCRATCH**
 (random init, no pretrained weights, no pretrained tokenizers) on a single
