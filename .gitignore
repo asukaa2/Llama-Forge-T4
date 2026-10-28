@@ -43,3 +43,5 @@ tokenizer_cache/
 *.swp
 *.swo
 *~
+worklog.md
+download/README.md
