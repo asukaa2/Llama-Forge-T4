@@ -1,10 +1,14 @@
 # 🔥 Llama-Forge-T4
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/asukaa2/Llama-Forge-T4/blob/main/train_llama_from_scratch.ipynb)
+
 > Forge a ~0.5B-parameter Llama from scratch on a single free-tier Colab T4 GPU.
 
 Train a **~0.5B-parameter Llama-style decoder-only language model FROM SCRATCH**
 (random init, no pretrained weights, no pretrained tokenizers) on a single
 NVIDIA T4 GPU via Google Colab.
+
+**👉 Click the badge above to launch the notebook in Colab.**
 
 ## Why this exists
 
@@ -16,9 +20,8 @@ scratch on free-tier Colab hardware. Everything is tuned for the T4
 
 | File | Description |
 |---|---|
-| `download/train_llama_from_scratch.ipynb` | Colab notebook — 8 labeled sections, Colab `#@param` forms, runs top-to-bottom |
-| `download/train.py` | Standalone equivalent script (same logic, argparse-driven) |
-| `scripts/build_notebook.py` | Generator script that produces the notebook |
+| [`train_llama_from_scratch.ipynb`](./train_llama_from_scratch.ipynb) | Colab notebook — 8 labeled sections, Colab `#@param` forms, runs top-to-bottom |
+| [`train.py`](./train.py) | Standalone equivalent script (same logic, argparse-driven) |
 
 ## Architecture
 
@@ -91,11 +94,22 @@ text to prove the export is valid.
 
 ## Quickstart
 
-1. Open `download/train_llama_from_scratch.ipynb` in Colab
+1. **Open in Colab:** [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/asukaa2/Llama-Forge-T4/blob/main/train_llama_from_scratch.ipynb)
 2. Runtime → Change runtime type → **T4 GPU**
 3. Edit only `DRIVE_PATH` and `TOKEN_BUDGET` in the Config cell (other params are tuned for T4)
 4. Run All
 5. For a smoke test first: set `TOKEN_BUDGET = 50_000_000` (~770 steps, ~1 h)
+
+**Or run locally / as a script:**
+
+```bash
+pip install uv && uv pip install --system -q \
+    torch==2.4.0 transformers==4.45.2 datasets==3.0.1 tokenizers==0.20.0 \
+    accelerate==0.34.2 safetensors==0.4.5 gradio==4.44.1
+
+python train.py --drive_path ./ckpt --output_dir ./output \
+    --token_budget 500000000 --wall_clock_hours 11
+```
 
 ## Pinned library versions (known-good on Colab T4)
 
