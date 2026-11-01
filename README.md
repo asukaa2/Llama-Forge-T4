@@ -1,4 +1,4 @@
-# 🔥 Llama-Forge-T4
+# 🔥 Llama-Forge
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/asukaa2/Llama-Forge-T4/blob/main/train_llama_from_scratch.ipynb)
 
